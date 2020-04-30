@@ -27,18 +27,20 @@ app.post("/login", function(req, res) {
 
     const mockUser = "admin";
     const mockPass = "123";
-    if ((reqUser === mockUser) && (reqPass === mockPass)) {
+    if ((reqUser = mockUser) && (reqPass = mockPass)) {
         res.json({
             success: true,
             message: "Login success",
             toke: "this is token"
         });
-    } else {
+} else {
         res.json({
-            success: false,
-            message: "User name or password do not match"
-     });
-    }
+            success: true,
+            message: "Login success",
+            toke: "this is token"
+        });
+
+}
 });
 
 app.listen(8000, function() {
